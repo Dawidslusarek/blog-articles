@@ -26,9 +26,7 @@ class ArticleController extends Controller
     {
         return Inertia::render('Articles/ArticlesList', [
             'canLogin' => Route::has('login'),
-            'canRegister' => Route::has('register'),
-            'laravelVersion' => Application::VERSION,
-            'phpVersion' => PHP_VERSION,
+            'canRegister' => Route::has('register')
         ]);
     }
 

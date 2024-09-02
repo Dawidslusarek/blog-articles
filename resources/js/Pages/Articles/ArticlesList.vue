@@ -18,16 +18,6 @@ const {
   handleArticles,
 } = useArticles();
 
-defineProps({
-  laravelVersion: {
-    type: String,
-    required: true,
-  },
-  phpVersion: {
-    type: String,
-    required: true,
-  },
-});
 </script>
 
 <template>
