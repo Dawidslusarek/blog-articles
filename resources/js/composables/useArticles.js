@@ -1,5 +1,5 @@
 import { ref, onMounted, computed } from "vue";
-import { router, useForm, usePage } from "@inertiajs/vue3";
+import { useForm, usePage } from "@inertiajs/vue3";
 import axios from "axios";
 export function useArticles() {
     const articles = ref([]);
@@ -24,10 +24,6 @@ export function useArticles() {
     const handleArticles = async () => {
         const request = await axios.get(`/api/articles?limit=${limit.value}`);
         articles.value = request.data;
-    };
-
-    const viewArticle = (id) => {
-        router.visit(`/articles/${id}`);
     };
 
     const editArticle = (article) => {
@@ -105,7 +101,6 @@ export function useArticles() {
         modalShown,
         articles,
         fetchArticles,
-        viewArticle,
         submit,
         form,
         user,
